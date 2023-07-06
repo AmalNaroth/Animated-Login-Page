@@ -62,7 +62,45 @@ class _LoginScreenState extends State<LoginScreen>
               FlutterLogo(
                 size: _iconAnimation!.value * 100,
               ),
-              //Form(child: )
+              Form(
+                  child: Theme(
+                    data: ThemeData(
+                      brightness: Brightness.dark,
+                      primaryColor: const Color.fromARGB(255, 255, 0, 0),
+                      primarySwatch: Colors.lightGreen,
+                      inputDecorationTheme: InputDecorationTheme(
+                        labelStyle: TextStyle(color: Colors.teal,fontSize: 20)
+                      )
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.all(40),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                      TextFormField(
+                        decoration: const InputDecoration(labelText: "Enter Email"),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      TextFormField(
+                        decoration:
+                            const InputDecoration(labelText: "Enter the password"),
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                      )
+                                    ],
+                                  ),
+                    ),
+                  ),
+              ),
+              Padding(padding: EdgeInsets.only(top: 10)),
+              MaterialButton(
+                height: 40,
+                minWidth: 100,
+                color: Colors.green,
+                textColor: Colors.black,
+                onPressed: (){},
+                splashColor: Colors.green.shade100,
+              child: Text("Submit"),)
             ],
           )
         ],
